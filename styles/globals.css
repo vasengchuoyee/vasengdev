@@ -1,26 +1,195 @@
-@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind variants;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --secondary-color: #3394f5;
+    --text-white: #ffffff;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  body {
+    @apply bg-[#030014] overflow-y-scroll overflow-x-hidden;
+  }
 }
+
+@layer components {
+  .heroButton {
+    @apply px-6 py-2 border border-[#242424] rounded-full uppercase text-xs tracking-widest text-gray-500 transition-all hover:border-[#F7AB0A]/40 hover:text-[#F7AB0A]/40;
+  }
+
+  .contactInput {
+    @apply outline-none bg-slate-400/10 rounded-sm border-b px-6 py-4 border-[#242424] text-gray-500 placeholder-gray-500 transition-all focus:border-[#F7AB0A]/40 focus:text-[#F7AB0A]/40 hover:border-[#F7AB0A]/40;
+  }
+
+  .glass-effect {
+    @apply bg-opacity-10 backdrop-filter backdrop-blur-lg bg-clip-padding;
+  }
+
+  .gradient-border {
+    @apply border border-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-border;
+  }
+
+  .nav-link {
+    @apply cursor-pointer hover:text-blue-500 relative group transition-all duration-300;
+  }
+
+  .nav-link::after {
+    @apply content-[''] absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-xl;
+  }
+}
+
+
+:root {
+    --secondary-color: #3394f5;
+    --text-white: #ffffff;
+}
+
+.dancing-script {
+    font-family: var(--font-dancing-script);
+}
+.cursive {
+    font-family: "Cedarville Cursive", cursive;
+}
+
+.Welcome-text {
+    background: linear-gradient(0deg,
+            rgba(255, 255, 255, 0.4),
+            rgba(255, 255, 255, 0.4)),
+        linear-gradient(90.01deg, #e59cff 0.01%, #ba9cff 50.01%, #9cb2ff 100%);
+    background-blend-mode: normal, screen;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.Welcome-box {
+    isolation: isolate;
+    overflow: hidden;
+    align-items: center;
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+    border-radius: 32px;
+    box-shadow: inset 0 -7px 11px #a48fff1f;
+    display: flex;
+
+    position: relative;
+    width: -moz-max-content;
+    width: max-content;
+    transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
+}
+
+.button-primary {
+    background: linear-gradient(180deg,
+            rgba(60, 8, 126, 0) 0%,
+            rgba(60, 8, 126, 0.32) 100%),
+        rgba(113, 47, 255, 0.12);
+    box-shadow: inset 0 0 12px #bf97ff3d;
+}
+
+.button-primary:hover {
+    background: linear-gradient(180deg,
+            rgba(60, 8, 126, 0) 0%,
+            rgba(60, 8, 126, 0.42) 100%),
+        rgba(113, 47, 255, 0.24);
+    box-shadow: inset 0 0 12px #bf97ff70;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+}
+
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hover-text {
+    @apply text-[15px] ml-[6px] hover:text-[var(--secondary-color)]
+}
+
+.getback {
+  @apply flex h-14 w-14 items-center justify-center rounded-full  shadow-lg bg-[linear-gradient(45deg,#039BE5,#AB47BC)] focus:outline-none 
+}
+
+.download {
+  @apply absolute inset-[2px] bg-black text-white flex justify-center items-center hover:bg-[radial-gradient(#6A1B9A,#1E88E5)] cursor-pointer rounded-md hover:text-white
+}
+
+
+.scrollbar-none::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+    display: none;
+  }
+  
+  .scrollbar-none {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  
+  
+  .scrollbar-hidden {
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+  }
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none; 
+  }
+
+  .image-card {
+    transition: transform 0.5s ease;
+    transform-style: preserve-3d;
+  }
+  
+  .image-card:hover {
+    transform: rotateY(180deg) scale(1.1);
+  }
+  
+  .carousel-container {
+    perspective: 1000px;
+  }
+
+  @keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+  
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .animate-rotate {
+    animation: rotate 5s linear infinite;
+  }
+
