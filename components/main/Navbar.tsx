@@ -92,7 +92,7 @@ const Navbar = () => {
                 </div>
 
                 {/* Certifications Modal */}
-                {isCertModalOpen && (
+                {/* {isCertModalOpen && (
                     <div className="fixed inset-0 z-50 mt-60 flex items-center justify-center">
                         <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm transition-opacity" onClick={() => setCertModalOpen(false)}></div>
                         <div className="relative z-50 w-full max-w-2xl mx-4">
@@ -118,10 +118,10 @@ const Navbar = () => {
                             </div>
                         </div>
                     </div>
-                )}
+                )} */}
 
                 {/* Buy me coffee Modal */}
-                {isCoffeeModalOpen && (
+                {/* {isCoffeeModalOpen && (
                     <div className="fixed inset-0 z-50 mt-60 flex items-center justify-center">
                         <div className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm transition-opacity" onClick={() => setCoffeeModalOpen(false)}></div>
                         <div className="relative z-50 w-full max-w-2xl mx-4">
@@ -137,7 +137,7 @@ const Navbar = () => {
                                 </div>
                                 <div className="grid md:grid-cols-2 gap-6">
                                     {/* QR Code and Bank Info */}
-                                    <div className="space-y-4">
+                                    {/* <div className="space-y-4">
                                         <Image 
                                             src="/qr-code.png" 
                                             alt="QR Code" 
@@ -165,10 +165,10 @@ const Navbar = () => {
                                                 </button>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
 
                                     {/* Contact Form */}
-                                    <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
+                                    {/* <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
                                         <div>
                                             <label className="block text-gray-300 mb-2">Name</label>
                                             <input
@@ -204,12 +204,12 @@ const Navbar = () => {
                                             <FaWhatsapp size={20} />
                                             Send via WhatsApp
                                         </button>
-                                    </form>
-                                </div>
+                                    </form> */}
+                                {/* </div>
                             </div>
                         </div>
                     </div>
-                )}
+                )} */} 
 
                 {/* Mobile Navigation */}
                 <div className={`md:hidden fixed top-[65px] left-0 w-full bg-[#030014] transition-all duration-300 ease-in-out ${
